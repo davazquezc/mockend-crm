@@ -16,6 +16,7 @@ models:
       projectManager: { Employee }
       poReceived: { bool }
   Tag:
+    belongsTo: [Project]
     fake:
       _count: 10
       name: { string }
