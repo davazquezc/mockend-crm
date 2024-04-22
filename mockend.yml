@@ -1,5 +1,5 @@
 models:
-  Post:
+  Project:
     hasMany: [Tag]
     fake:
       _count: 50
