@@ -23,7 +23,6 @@ models:
       backgroundColor: { int }
   Proposal:
     hasMany: [Tag]
-    hasMany: [User]
     fake:
       _count: 50
       proposalID: { int }
@@ -149,6 +148,7 @@ models:
       total: decimal
       date: dateTime
   ProposalStatus:
+  
     fake:
       _count: 5
       statusID: int
