@@ -160,7 +160,7 @@ models:
       username: name
       password: password
       accessLevel: int
-      employeeID: { Employee }
+      employeeID: Employee
       notes: loremParagraphs
 
 
