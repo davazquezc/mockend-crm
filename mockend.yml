@@ -26,8 +26,8 @@ models:
     hasMany: [Tag]
     fake:
       _count: 50
-      proposalID: { int }
-      proposalNumber: { string }
+      proposalID: int
+      proposalNumber: string 
       customer: { Customer }
       date: dateTime 
       summary: loremParagraphs,
@@ -102,7 +102,7 @@ models:
     fake:
       _count: 20
       contactID: int
-      customerID: Customer
+      customerID: {Customer}
       firstName: firstName
       lastName: lastName
       title: jobTitle
