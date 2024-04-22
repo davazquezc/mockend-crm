@@ -3,19 +3,18 @@ models:
     hasMany: [Tag]
     fake:
       _count: 50
-      projectID: { int }
-      projectNumber: { string }
-      customer: { Customer }
-      name: { loremWords: [5, 10] }
-      dateStarted: { dateTime }
-      dateEnded: { dateTime  }
-      status: { ProjectStatus }
-      proposal: { Proposal }
-      notes: { loremWords: [5, 10] }
-      admin: { Employee }
-      projectManager: { Employee }
-      poReceived: { bool }
-      tag: [Tag]
+      projectID: int
+      projectNumber: string 
+      customer: Customer 
+      name: loremWords: [5, 10]
+      dateStarted: dateTime 
+      dateEnded:  dateTime  
+      status: ProjectStatus 
+      proposal:  Proposal 
+      notes: loremWords: [5, 10] 
+      admin: Employee 
+      projectManager: Employee 
+      poReceived: bool 
   Tag:
     belongsTo: [Project]
     fake:
