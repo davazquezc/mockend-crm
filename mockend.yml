@@ -23,6 +23,7 @@ models:
       backgroundColor: { int }
   Proposal:
     hasMany: [Tag]
+    hasMany: [User]
     fake:
       _count: 50
       proposalID: { int }
@@ -33,7 +34,7 @@ models:
       document: { imageURL: [1920, 1080] }
       notes: loremParagraphs,
       admin: { Employee }
-      proposalStatus: { Status }
+      proposalStatus: { ProposalStatus }
       proposalManager: { Employee }
   Invoice:
     hasMany: [Tag]
@@ -69,7 +70,7 @@ models:
     fake:
       _count: 30
       customerID: { Customer }
-      group: { Group }
+      group: { CustomerGroup }
       customerName: name
       customerCode: string
       customerNumber: string
@@ -83,7 +84,7 @@ models:
       email: email
       website: loremWords
       notes: loremParagraphs
-  Employees:
+  Employee:
     fake:
       _count: 20
       emplyeeID: int
@@ -96,6 +97,72 @@ models:
       _count: 10
       statusID: int
       statusName: string
+  Contact: 
+    fake:
+      _count: 20
+      contactID: int
+      customerID: Customer
+      firstName: name
+      lastName: lastName
+      title: loremWords
+      contactType: loremWords
+      sendInvoice: bool
+      isManagingPO: bool
+      phone: phone
+      email: email
+      notes: loremParagraphs
+  CustomerGroups: 
+    fake:
+      _count: 10
+      groupID: int
+      groupName: string
+      notes: loremParagraphs
+  Industry:
+    fake:
+      _count: 20
+      industryID: int
+      industryName: string
+      description: loremParagraphs
+      naic: string
+  InvoiceProposalMilestone:
+    fake:
+      _count: 10
+      invoiceID: Invoice
+      proposalMilestoneID: int
+  POLines:
+    fake:
+      _count: 10
+      lineID: int
+      po: POReceived
+      descriptions: loremParagraphs
+      quantity: int
+      price: decimal
+  ProposalMilestone:
+    fake:
+      _count: 5
+      milestoneID: int
+      proposal: Proposal
+      description: loremParagraphs
+      percentage: decimal
+      qty: int
+      unitPrice: decimal
+      total: decimal
+      date: dateTime
+  ProposalStatus:
+    fake:
+      _count: 5
+      statusID: int
+      statusName: string
+  User:
+    fake:
+      _count: 20
+      userID: int
+      username: name
+      password: password
+      accessLevel: int
+      employeeID: { Employee }
+      notes: loremParagraphs
+
 
 
 
