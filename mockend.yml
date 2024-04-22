@@ -5,7 +5,7 @@ models:
       _count: 50
       projectID: int
       projectNumber: string 
-      customer: Customer 
+      customer: { Customer }
       name: { loremWords: [5, 10] }
       dateStarted: dateTime 
       dateEnded:  dateTime  
