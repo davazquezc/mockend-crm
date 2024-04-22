@@ -92,6 +92,7 @@ models:
       title: loremWords
       notes: loremParagraphs
   ProjectStatus:
+    belongsTo: [Project]
     fake:
       _count: 10
       statusID: int
