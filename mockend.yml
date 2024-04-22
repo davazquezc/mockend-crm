@@ -20,9 +20,9 @@ models:
     belongsTo: [Project]
     fake:
       _count: 10
-      name: { string }
-      foregroundColor: { int }
-      backgroundColor: { int }
+      name: string
+      foregroundColor: int 
+      backgroundColor: int
   Proposal:
     hasMany: [Tag]
     fake:
