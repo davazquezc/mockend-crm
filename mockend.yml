@@ -44,7 +44,7 @@ models:
       invoiceNumber: string
       invoiceDate: dateTime
       dueDate: dateTime
-      totalAmount: decimal
+      totalAmount: float
       invoiced: bool
       dateInvoiced: dateTime
       sent: bool
@@ -60,7 +60,7 @@ models:
       poNumber: string
       poDate: deteTime
       paymentConditions: loremParagraphs
-      totalAmount: decimal
+      totalAmount: float
       notes: loremParagraphs
       projectManager: { Employee }
       project: { Project }
@@ -74,22 +74,22 @@ models:
       customerCode: string
       customerNumber: string
       industry: { Industry }
-      address: loremWords
-      city: loremWords
-      state: loremWords
-      zipCode: int
-      country: loremWords
+      address: address
+      city: city
+      state: state
+      zipCode: zip
+      country: country
       phone: phone
       email: email
-      website: loremWords
+      website: URL
       notes: loremParagraphs
   Employee:
     fake:
       _count: 20
       emplyeeID: int
-      firstName: name
-      lastName: name
-      title: loremWords
+      firstName: firstName
+      lastName: lastName
+      title: word
       notes: loremParagraphs
   ProjectStatus:
     belongsTo: [Project]
@@ -102,10 +102,10 @@ models:
       _count: 20
       contactID: int
       customerID: Customer
-      firstName: name
+      firstName: firstName
       lastName: lastName
-      title: loremWords
-      contactType: loremWords
+      title: jobTitle
+      contactType: jobLevel
       sendInvoice: bool
       isManagingPO: bool
       phone: phone
@@ -136,20 +136,19 @@ models:
       po: POReceived
       descriptions: loremParagraphs
       quantity: int
-      price: decimal
+      price: price
   ProposalMilestone:
     fake:
       _count: 5
       milestoneID: int
       proposal: Proposal
       description: loremParagraphs
-      percentage: decimal
+      percentage: float
       qty: int
-      unitPrice: decimal
-      total: decimal
+      unitPrice: price
+      total: float
       date: dateTime
   ProposalStatus:
-  
     fake:
       _count: 5
       statusID: int
@@ -158,7 +157,7 @@ models:
     fake:
       _count: 20
       userID: int
-      username: name
+      username: username
       password: password
       accessLevel: int
       employeeID: Employee
