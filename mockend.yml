@@ -6,12 +6,12 @@ models:
       projectID: int
       projectNumber: string 
       customer: Customer 
-      name: loremWords: [5, 10]
+      name: { loremWords: [5, 10] }
       dateStarted: dateTime 
       dateEnded:  dateTime  
       status: ProjectStatus 
       proposal:  Proposal 
-      notes: loremWords: [5, 10] 
+      notes: { loremWords: [5, 10] }
       admin: Employee 
       projectManager: Employee 
       poReceived: bool 
