@@ -15,7 +15,7 @@ models:
       admin: { Employee }
       projectManager: { Employee }
       poReceived: { bool }
-      tags: [Tag]
+      tag: [Tag]
   Tag:
     belongsTo: [Project]
     fake:
