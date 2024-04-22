@@ -9,7 +9,7 @@ models:
       name: { loremWords: [5, 10] }
       dateStarted: { dateTime }
       dateEnded: { dateTime  }
-      status: { Status }
+      status: { ProjectStatus }
       proposal: { Proposal }
       notes: { loremWords: [5, 10] }
       admin: { Employee }
@@ -35,5 +35,67 @@ models:
       admin: { Employee }
       proposalStatus: { Status }
       proposalManager: { Employee }
-  
+  Invoice:
+    hasMany: [Tag]
+    fake:
+      _count: 40
+      invoiceID: int
+      project: {Project}
+      invoiceNumber: string
+      invoiceDate: dateTime
+      dueDate: dateTime
+      totalAmount: decimal
+      invoiced: bool
+      dateInvoiced: dateTime
+      sent: bool
+      rejected: bool
+      voided: bool
+      notes: loremParagraphs
+  POReceived:
+    hasMany: [Tag]
+    fake:
+      _count: 100
+      poID: int
+      customerID: { Customer }
+      poNumber: string
+      poDate: deteTime
+      paymentConditions: loremParagraphs
+      totalAmount: decimal
+      notes: loremParagraphs
+      projectManager: { Employee }
+      project: { Project }
+      proposal: { Proposal }
+  Customer:
+    fake:
+      _count: 30
+      customerID: { Customer }
+      group: { Group }
+      customerName: name
+      customerCode: string
+      customerNumber: string
+      industry: { Industry }
+      address: loremWords
+      city: loremWords
+      state: loremWords
+      zipCode: int
+      country: loremWords
+      phone: phone
+      email: email
+      website: loremWords
+      notes: loremParagraphs
+  Employees:
+    fake:
+      _count: 20
+      emplyeeID: int
+      firstName: name
+      lastName: name
+      title: loremWords
+      notes: loremParagraphs
+  ProjectStatus:
+    fake:
+      _count: 10
+      statusID: int
+      statusName: string
+
+
 
