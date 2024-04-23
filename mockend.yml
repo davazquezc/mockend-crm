@@ -3,6 +3,7 @@ models:
     hasMany: [Tag]
     fake:
       _count: 50
+      totalCount: 50
       projectID: int
       projectNumber: string 
       customer: { Customer }
