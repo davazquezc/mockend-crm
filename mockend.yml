@@ -3,7 +3,7 @@ models:
     hasMany: [Tag]
     fake:
       _count: 50
-      totalCount: int [50, 50]
+      totalCount: { int: [0, 1000] }
       projectID: int
       projectNumber: string 
       customer: { Customer }
@@ -12,7 +12,7 @@ models:
       dateEnded:  dateTime  
       status: ProjectStatus 
       proposal:  Proposal 
-      notes: { loremWords: [5, 10] }
+      notes: loremParagraphs
       admin: Employee 
       projectManager: Employee 
       poReceived: bool 
