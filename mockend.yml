@@ -155,13 +155,13 @@ models:
       statusID: int
       statusName: string
   User:
+    belongsTo: [Employee]
     fake:
       _count: 20
       userID: int
       username: username
       password: password
       accessLevel: int
-      employeeID: Employee
       notes: loremParagraphs
 
 
